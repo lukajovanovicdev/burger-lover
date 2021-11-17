@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/burger-lover/static/css/main.62440db9.chunk.css",
+    "main.js": "/burger-lover/static/js/main.a2a7e573.chunk.js",
+    "main.js.map": "/burger-lover/static/js/main.a2a7e573.chunk.js.map",
+    "runtime-main.js": "/burger-lover/static/js/runtime-main.eb727b54.js",
+    "runtime-main.js.map": "/burger-lover/static/js/runtime-main.eb727b54.js.map",
+    "static/js/2.ca42bba9.chunk.js": "/burger-lover/static/js/2.ca42bba9.chunk.js",
+    "static/js/2.ca42bba9.chunk.js.map": "/burger-lover/static/js/2.ca42bba9.chunk.js.map",
+    "static/js/3.342d67cd.chunk.js": "/burger-lover/static/js/3.342d67cd.chunk.js",
+    "static/js/3.342d67cd.chunk.js.map": "/burger-lover/static/js/3.342d67cd.chunk.js.map",
+    "index.html": "/burger-lover/index.html",
+    "static/css/main.62440db9.chunk.css.map": "/burger-lover/static/css/main.62440db9.chunk.css.map",
+    "static/js/2.ca42bba9.chunk.js.LICENSE.txt": "/burger-lover/static/js/2.ca42bba9.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/burger-lover/static/media/bosch-colors.62f89b0d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb727b54.js",
+    "static/js/2.ca42bba9.chunk.js",
+    "static/css/main.62440db9.chunk.css",
+    "static/js/main.a2a7e573.chunk.js"
+  ]
+}
