@@ -1,12 +1,54 @@
-# Getting Started with Create React App
+# Burger Lover
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The task represents an application to create ingredients and compile burgers from those ingredients.
+
+## Workflow
+
+As a user, I want to be able to add new ingredients for making burgers. The ingredients should have a name, image (link from the web is acceptable) and the number of calories. As a user I want to add Tags to each ingredient, for example, vegan, gluten-free, etc. to make burgers with specific ingredients only.
+Once we have all ingredients, as a user I want to be able to view them on a separate ingredients page with the most important information in the list. The list needs to be sortable by calories, and filterable by tags. So if I click on the tag that’s assigned to that ingredient I will see all the ingredients with the same tag.
+
+After we have all of our ingredients as a user I want to make my own burger.
+
+When the page for making burgers is opened, the user should be able to name his burger, add a tag to the burger and should see the list of ingredients with a total number of calories. Plus points if the list of ingredients is searchable by name, filterable by tags, and sortable by calories.
+
+When a user finishes making his special burger, the created burger should be listed on the burger overview page. Sorting the burgers based on name, calories is also a plus.
+By clicking on each ingredient or burger from their lists, users should see the details about it.
+
+When on the burgers or ingredients page, in both lists next to each element should be an edit and delete button, which when it is clicked gives the possibility to edit or delete the item.
+
+## Technical information
+
+### BURGERS API ENDPOINT:
+
+### GET / POST
+
+https://6195607a74c1bd00176c6d1f.mockapi.io
+
+### GET BY ID / PUT / DELETE
+
+/burgers/:id
+
+### INGREDIENTS API ENDPOINT:
+
+### GET / POST
+
+https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients
+
+### GET BY ID / PUT / DELETE
+
+/ingredients/:id
+
+## Additional information
+
+Try to focus on providing as many features as possible. Great design is a bonus.
+
+# Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,57 +56,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm run deploy`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deploy App on github pages
