@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
 import Ingredients from "./components/Ingredients";
@@ -6,17 +7,41 @@ import Burgers from "./components/Burgers";
 import AddBurger from "./components/AddBurger";
 
 function App() {
-  const [ingredient, setIngredient] = useState([]);
+  const [ingredient, setIngredients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const fetchIngredientHandler = useCallback(async () => {
     setIsLoading(true);
     setError(null);
-  });
-  try {
-    const response = await fetch("https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients");
-  }
+    try {
+      const response = await fetch(
+        "https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients"
+      );
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+      const data = await response.json();
+
+      const loadedIngredients = [];
+
+      for (const key in data) {
+        loadedIngredients.push({
+          id: key,
+          name: data[key].name,
+          tag: data[key].tag,
+          calories: data[key].calories,
+        });
+      }
+      setIngredients(loadedIngredients);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  }, []);
+  useEffect(() => {
+    fetchIngredientHandler();
+  }, [fetchIngredientHandler]);
 
   async function addIngredientHandler(ingredient) {
     const response = await fetch(
