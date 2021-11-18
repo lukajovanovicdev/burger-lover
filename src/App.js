@@ -1,9 +1,9 @@
 import "./App.css";
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Ingredients from "./Ingredients";
-import AddIngredients from "./AddIngredients";
-import Burgers from "./Burgers";
-import AddBurger from "./AddBurger";
+import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import Ingredients from "./components/Ingredients";
+import AddIngredients from "./components/AddIngredients";
+import Burgers from "./components/AddBurger";
+import AddBurger from "./components/AddBurger";
 
 function App() {
   return (
@@ -16,6 +16,10 @@ function App() {
         />
         <Route path="/burger-lover/Burgers" element={<Burgers />} />
         <Route path="/burger-lover/AddBurger" element={<AddBurger />} />
+        <Route
+          path="*"
+          element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
