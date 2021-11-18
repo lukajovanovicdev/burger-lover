@@ -1,9 +1,9 @@
 import "./App.css";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
-import Ingredients from "./Ingredients";
-import AddIngredients from "./AddIngredients";
-import Burgers from "./Burgers";
-import AddBurger from "./AddBurger";
+import Ingredients from "./components/Ingredients";
+import AddIngredients from "./components/AddIngredients";
+import Burgers from "./components/AddBurger";
+import AddBurger from "./components/AddBurger";
 
 function App() {
   return (
