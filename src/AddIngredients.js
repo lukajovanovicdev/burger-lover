@@ -1,4 +1,6 @@
+// import { ButtonBase } from "@mui/material";
 import { useState } from "react";
+import ButtonBases from "./components/buttons/ButtonsBase";
 
 const AddIngredients = () => {
   const [enteredName, setEnteredName] = useState("");
@@ -71,7 +73,9 @@ const AddIngredients = () => {
     : "form-control";
 
   return (
-    <form onSubmit={formSubmissionHandler}>
+    <div>
+      <ButtonBases></ButtonBases>
+      <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
         <label htmlFor="text">Ingredient Name</label>
         <input
@@ -119,6 +123,9 @@ const AddIngredients = () => {
         <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
+
+    </div>
+    
   );
 };
 
