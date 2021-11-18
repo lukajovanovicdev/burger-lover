@@ -3,7 +3,6 @@ html {
 }
 
 .App {
-  background-image: url('./assets/bosch-colors.jpg');
   min-height: 100vh;
   display: flex;
   flex-direction: column;
