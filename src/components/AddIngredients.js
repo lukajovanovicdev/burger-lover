@@ -1,4 +1,6 @@
+// import { ButtonBase } from "@mui/material";
 import { useState } from "react";
+import ButtonBases from "./buttons/ButtonsBase";
 
 const AddIngredients = () => {
   const [enteredName, setEnteredName] = useState("");
@@ -71,54 +73,57 @@ const AddIngredients = () => {
     : "form-control";
 
   return (
-    <form onSubmit={formSubmissionHandler}>
-      <div className={nameInputClasses}>
-        <label htmlFor="text">Ingredient Name</label>
-        <input
-          // ref={nameInputRef}
-          type="text"
-          id="ingredientName"
-          onChange={nameInputChangeHandler}
-          onBlur={nameInputBlurHandler}
-          value={enteredName}
-          name="ingredientName"
-        />
-        {nameInputIsInvalid && (
-          <p className="error-text">Name must not be empty</p>
-        )}
-      </div>
-      <div>
-        <label htmlFor="text">Tag</label>
-        <input
-          // ref={nameInputRef}
-          type="text"
-          id="ingredientTag"
-          onChange={tagInputChangeHandler}
-          onBlur={tagInputBlurHandler}
-          value={enteredTag}
-          name="ingredientTag"
-        />
-        {nameInputIsInvalid && (
-          <p className="error-text">Please enter a valid Tag</p>
-        )}
-      </div>
-      <div>
-        <label htmlFor="text">Ingredient Calories</label>
-        <input
-          // ref={nameInputRef}
-          type="number"
-          id="ingredientName"
-          onChange={caloriesInputChangeHandler}
-          onBlur={caloriesInputBlurHandler}
-          value={enteredCalories}
-          name="ingredientCalories"
-        />
-        {caloriesInputIsInvalid && <p className="error-text"></p>}
-      </div>
-      <div className="form-actions">
-        <button disabled={!formIsValid}>Submit</button>
-      </div>
-    </form>
+    <div>
+      <ButtonBases></ButtonBases>
+      <form onSubmit={formSubmissionHandler}>
+        <div className={nameInputClasses}>
+          <label htmlFor="text">Ingredient Name</label>
+          <input
+            // ref={nameInputRef}
+            type="text"
+            id="ingredientName"
+            onChange={nameInputChangeHandler}
+            onBlur={nameInputBlurHandler}
+            value={enteredName}
+            name="ingredientName"
+          />
+          {nameInputIsInvalid && (
+            <p className="error-text">Name must not be empty</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="text">Tag</label>
+          <input
+            // ref={nameInputRef}
+            type="text"
+            id="ingredientTag"
+            onChange={tagInputChangeHandler}
+            onBlur={tagInputBlurHandler}
+            value={enteredTag}
+            name="ingredientTag"
+          />
+          {nameInputIsInvalid && (
+            <p className="error-text">Please enter a valid Tag</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="text">Ingredient Calories</label>
+          <input
+            // ref={nameInputRef}
+            type="number"
+            id="ingredientName"
+            onChange={caloriesInputChangeHandler}
+            onBlur={caloriesInputBlurHandler}
+            value={enteredCalories}
+            name="ingredientCalories"
+          />
+          {caloriesInputIsInvalid && <p className="error-text"></p>}
+        </div>
+        <div className="form-actions">
+          <button disabled={!formIsValid}>Submit</button>
+        </div>
+      </form>
+    </div>
   );
 };
 

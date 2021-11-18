@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
 import Ingredients from "./components/Ingredients";
 import AddIngredients from "./components/AddIngredients";
-import Burgers from "./components/AddBurger";
+import Burgers from "./components/Burgers";
 import AddBurger from "./components/AddBurger";
 
 function App() {
