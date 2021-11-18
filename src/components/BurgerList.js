@@ -9,6 +9,36 @@ import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
 
 export default function CheckboxList() {
+
+    
+    const burgers = [
+        {
+            id: 1,
+            name: 'Burger1',
+            calories: 100,
+            tag: 'veganski',
+        },
+        {
+            id: 2,
+            name: 'Burger2',
+            calories: 100,
+            tag: 'pork',
+        },
+        {
+            id: 3,
+            name: 'Burger3',
+            calories: 100,
+            tag: 'italijanski',
+        },
+        {
+            id: 4,
+            name: 'Burger4',
+            calories: 100,
+            tag: 'veganski',
+        },
+
+    ]
+
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
@@ -24,32 +54,37 @@ export default function CheckboxList() {
     setChecked(newChecked);
   };
 
+  const openBurgerIngredientList = (burgerId) => {
+    console.log('burgerId = ' , burgerId);
+  }
+
   return (
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
+      {burgers.map((value) => {
+        const labelId = `checkbox-list-label-${value.id}`;
 
         return (
           <ListItem
-            key={value}
+            key={value.id}
             secondaryAction={
-              <IconButton edge="end" aria-label="comments">
+              <IconButton edge="end" aria-label="comments" >
                 <CommentIcon />
               </IconButton>
             }
             disablePadding
+            // onClick={openBurgerIngredientList(value.id)}
           >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
+            <ListItemButton role={undefined} onClick={handleToggle(value.id)} dense>
               <ListItemIcon>
                 <Checkbox
                   edge="start"
-                  checked={checked.indexOf(value) !== -1}
+                  checked={checked.indexOf(value.id) !== -1}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={`${value.name}`} />
             </ListItemButton>
           </ListItem>
         );

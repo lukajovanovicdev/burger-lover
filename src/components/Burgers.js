@@ -1,9 +1,10 @@
 import React from "react";
-import BurgerList from "./components/BurgerList"
+import BurgerList from "./BurgerList"
 
 const Burger = () => {
+
     return (
-        <div>
+        <div class="middle">
             <BurgerList />
         </div>
        );
