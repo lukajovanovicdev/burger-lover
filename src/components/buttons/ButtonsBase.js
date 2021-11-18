@@ -4,23 +4,39 @@ import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
 
+
+const openIngredients =  () => {
+    console.log('openIngredients action')
+}
+
+const openBurgers = () => {
+    console.log('openBurgers action');
+}
+
+const openCustomBurger = () => {
+    console.log('openCustomBurger action');
+}
+
 const images = [
-  {
-    url: 'static/images/ingredients.jpg',
-    title: 'Ingredients',
-    width: '30%',
-  },
-  {
-    url: 'static/images/burgers.jpg',
-    title: 'Burgers',
-    width: '40%',
-  },
-  {
-    url: 'static/images/custom.jpg',
-    title: 'Make Custom Burger',
-    width: '30%',
-  },
-];
+    {
+      url: 'static/images/ingredients.jpg',
+      title: 'Ingredients',
+      width: '30%',
+      action: openIngredients,
+    },
+    {
+      url: 'static/images/burgers.jpg',
+      title: 'Burgers',
+      width: '40%',
+      action: openBurgers,
+    },
+    {
+      url: 'static/images/custom.jpg',
+      title: 'Make Custom Burger',
+      width: '30%',
+      action: openCustomBurger,
+    },
+  ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
@@ -93,6 +109,7 @@ export default function ButtonBases() {
         <ImageButton
           focusRipple
           key={image.title}
+          onClick={image.action}
           style={{
             width: image.width,
           }}
