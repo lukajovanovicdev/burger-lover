@@ -3,40 +3,8 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom'
 
-
-const openIngredients =  () => {
-    alert('openIngredients action');
-}
-
-const openBurgers = () => {
-    alert('openBurgers action');
-}
-
-const openCustomBurger = () => {
-    alert('openCustomBurger action');
-}
-
-const images = [
-    {
-      url: 'static/images/ingredients.jpg',
-      title: 'Ingredients',
-      width: '30%',
-      action: openIngredients,
-    },
-    {
-      url: 'static/images/burgers.jpg',
-      title: 'Burgers',
-      width: '40%',
-      action: openBurgers,
-    },
-    {
-      url: 'static/images/custom.jpg',
-      title: 'Make Custom Burger',
-      width: '30%',
-      action: openCustomBurger,
-    },
-  ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
@@ -103,6 +71,41 @@ const ImageMarked = styled('span')(({ theme }) => ({
 }));
 
 export default function ButtonBases() {
+    const navigate = useNavigate();
+    
+    const openIngredients =  () => {
+        navigate('/burger-lover/AddIngredients');
+    }
+
+    
+    const openBurgers = () => {
+        navigate('/burger-lover/Burgers')
+    }
+    const openCustomBurger = () => {
+        alert('openCustomBurger action');
+    }
+
+    const images = [
+        {
+          url: 'static/images/ingredients.jpg',
+          title: 'Ingredients',
+          width: '30%',
+          action: openIngredients,
+        },
+        {
+          url: 'static/images/burgers.jpg',
+          title: 'Burgers',
+          width: '40%',
+          action: openBurgers,
+        },
+        {
+          url: 'static/images/custom.jpg',
+          title: 'Make Custom Burger',
+          width: '30%',
+          action: openCustomBurger,
+        },
+      ];
+    
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
