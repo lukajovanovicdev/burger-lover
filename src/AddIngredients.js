@@ -7,14 +7,19 @@ const AddIngredients = () => {
   const [enteredTag, setenteredTag] = useState("");
   const [enteredTagTouched, setenteredTagTouched] = useState(false);
 
+  const [enteredCalories, setEnteredCalories] = useState("");
+  const [enteredCaloriesTouched, setEnteredCaloriesTouched] = useState(false);
+
   const enteredNameIsValid = enteredName.trim() !== "";
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
+  const enteredCaloriesIsValid = enteredCalories !== "";
+  const caloriesInputIsInvalid = enteredCalories === "";
 
   const enteredTagIsValid = enteredTag;
 
   let formIsValid = false;
 
-  if (enteredNameIsValid && enteredTagIsValid) {
+  if (enteredNameIsValid && enteredTagIsValid && enteredCaloriesIsValid) {
     formIsValid = true;
   }
 
@@ -25,6 +30,9 @@ const AddIngredients = () => {
   const tagInputChangeHandler = (event) => {
     setenteredTag(event.target.value);
   };
+  const caloriesInputChangeHandler = (event) => {
+    setEnteredCalories(event.target.value);
+  };
 
   const nameInputBlurHandler = (event) => {
     setEnteredNameTouched(true);
@@ -32,6 +40,9 @@ const AddIngredients = () => {
 
   const tagInputBlurHandler = (event) => {
     setenteredTagTouched(true);
+  };
+  const caloriesInputBlurHandler = (event) => {
+    setEnteredCaloriesTouched(true);
   };
 
   const formSubmissionHandler = (event) => {
@@ -51,6 +62,8 @@ const AddIngredients = () => {
     setEnteredNameTouched(false);
     setenteredTag("");
     setenteredTagTouched(false);
+    setEnteredCalories("");
+    setEnteredCaloriesTouched(false);
   };
 
   const nameInputClasses = nameInputIsInvalid
@@ -88,6 +101,19 @@ const AddIngredients = () => {
         {nameInputIsInvalid && (
           <p className="error-text">Please enter a valid Tag</p>
         )}
+      </div>
+      <div>
+        <label htmlFor="text">Ingredient Calories</label>
+        <input
+          // ref={nameInputRef}
+          type="number"
+          id="ingredientName"
+          onChange={caloriesInputChangeHandler}
+          onBlur={caloriesInputBlurHandler}
+          value={enteredCalories}
+          name="ingredientCalories"
+        />
+        {caloriesInputIsInvalid && <p className="error-text"></p>}
       </div>
       <div className="form-actions">
         <button disabled={!formIsValid}>Submit</button>
