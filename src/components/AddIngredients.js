@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ButtonBases from "./buttons/ButtonsBase";
 
-const AddIngredients = () => {
+const AddIngredients = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameTouched, setEnteredNameTouched] = useState(false);
 
@@ -49,8 +49,13 @@ const AddIngredients = () => {
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
-
     setEnteredNameTouched(true);
+    const ingredient = {
+      name: enteredName,
+      tags: enteredTag,
+      calories: enteredCalories,
+    };
+    props.onAddIngredient(ingredient);
 
     if (!enteredNameIsValid) {
       return;
