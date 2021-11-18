@@ -7,7 +7,7 @@ import Burgers from "./components/Burgers";
 import AddBurger from "./components/AddBurger";
 
 function App() {
-  const [ingredient, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -57,21 +57,13 @@ function App() {
     const data = await response.json();
     console.log(data);
   }
-  let content = <p>No ingredient found</p>;
-
-  if (ingredient.length > 0) {
-    content = <Ingredients ingredient={ingredient} />;
-  }
-  if (error) {
-    content = <p>{error}</p>;
-  }
-  if (isLoading) {
-    content = <p>Loading...</p>;
-  }
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/burger-lover/Ingredients" element={<Ingredients />} />
+        <Route
+          path="/burger-lover/Ingredients"
+          element={<Ingredients data={ingredients} />}
+        />
         <Route
           path="/burger-lover/AddIngredients"
           element={<AddIngredients onAddIngredient={addIngredientHandler} />}
