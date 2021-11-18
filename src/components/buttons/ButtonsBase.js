@@ -6,15 +6,15 @@ import Typography from '@mui/material/Typography';
 
 
 const openIngredients =  () => {
-    console.log('openIngredients action')
+    alert('openIngredients action');
 }
 
 const openBurgers = () => {
-    console.log('openBurgers action');
+    alert('openBurgers action');
 }
 
 const openCustomBurger = () => {
-    console.log('openCustomBurger action');
+    alert('openCustomBurger action');
 }
 
 const images = [
