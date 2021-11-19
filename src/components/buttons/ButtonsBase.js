@@ -83,7 +83,7 @@ export default function ButtonBases() {
     navigate("/burger-lover/Burgers");
   };
   const openCustomBurger = () => {
-    alert("openCustomBurger action");
+    navigate("/burger-lover/MakeCustomBurger");
   };
 
   const images = [

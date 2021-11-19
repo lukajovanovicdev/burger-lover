@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import classes from "./CommentModal.module.css";
-import { Button } from "./buttons/Button";
+import "./buttons/ButtonsBase";
 
 const CommentModal = ({ openComment }) => {
   const [open, setOpen] = useState(openComment);
