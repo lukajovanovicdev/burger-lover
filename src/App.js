@@ -61,6 +61,7 @@ function App() {
   }
   return (
     <BrowserRouter>
+      <ButtonBases></ButtonBases>
       <Routes>
         <Route
           path="/burger-lover/Ingredients"
