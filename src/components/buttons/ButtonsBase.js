@@ -75,14 +75,12 @@ export default function ButtonBases() {
     
     const openIngredients =  () => {
         navigate('/burger-lover/AddIngredients');
-    }
-
-    
+    }    
     const openBurgers = () => {
-        navigate('/burger-lover/Burgers')
+        navigate('/burger-lover/Burgers');
     }
     const openCustomBurger = () => {
-        alert('openCustomBurger action');
+        navigate('/burger-lover/MakeCustomBurger');
     }
 
     const images = [
