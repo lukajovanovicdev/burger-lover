@@ -55,25 +55,6 @@ function App() {
     console.log(data);
   }
   return (
-<<<<<<< HEAD
-    <div>
-      
-      <BrowserRouter>
-      <ButtonBases></ButtonBases>
-        <Routes>
-          <Route path="/burger-lover/Ingredients" element={<Ingredients />} />
-          <Route
-            path="/burger-lover/AddIngredients"
-            element={<AddIngredients onAddIngredient={addIngredientHandler} />}
-          />
-          <Route path="/burger-lover/Burgers" element={<Burgers />} />
-          <Route path="/burger-lover/AddBurger" element={<AddBurger />} />
-          <Route path="/burger-lover/MakeCustomBurger" element={<MakeCustomBurger />} />
-          <Route path="*" element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-=======
     <BrowserRouter>
       <Routes>
         <Route
@@ -92,7 +73,6 @@ function App() {
         ></Route>
       </Routes>
     </BrowserRouter>
->>>>>>> 7bca16db112d641c78760bd675d8815f4cae7d57
   );
 }
 
