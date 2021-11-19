@@ -5,42 +5,14 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
+// import IconButton from '@mui/material/IconButton';
+// import CommentIcon from '@mui/icons-material/Comment';
 import useIngrediantsFetch from '../services/useIngrediantsFetch';
 
 export default function CheckboxList() {
 
     const ingredients = useIngrediantsFetch();
     const ingredientsData = ingredients.data;
-    
-    // const burgers = [
-    //     {
-    //         id: 1,
-    //         name: 'Burger1',
-    //         calories: 100,
-    //         tag: 'veganski',
-    //     },
-    //     {
-    //         id: 2,
-    //         name: 'Burger2',
-    //         calories: 100,
-    //         tag: 'pork',
-    //     },
-    //     {
-    //         id: 3,
-    //         name: 'Burger3',
-    //         calories: 100,
-    //         tag: 'italijanski',
-    //     },
-    //     {
-    //         id: 4,
-    //         name: 'Burger4',
-    //         calories: 100,
-    //         tag: 'veganski',
-    //     },
-
-    // ]
 
   const [checked, setChecked] = React.useState([0]);
 

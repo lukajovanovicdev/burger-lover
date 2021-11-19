@@ -9,7 +9,7 @@ import MakeCustomBurger from './components/MakeCustomBurger';
 import ButtonBases from './components/buttons/ButtonsBase';
 
 function App() {
-  const [ingredient, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -54,18 +54,8 @@ function App() {
     const data = await response.json();
     console.log(data);
   }
-  let content = <p>No ingredient found</p>;
-
-  if (ingredient.length > 0) {
-    content = <Ingredients ingredient={ingredient} />;
-  }
-  if (error) {
-    content = <p>{error}</p>;
-  }
-  if (isLoading) {
-    content = <p>Loading...</p>;
-  }
   return (
+<<<<<<< HEAD
     <div>
       
       <BrowserRouter>
@@ -83,6 +73,26 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+=======
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/burger-lover/Ingredients"
+          element={<Ingredients data={ingredients} />}
+        />
+        <Route
+          path="/burger-lover/AddIngredients"
+          element={<AddIngredients onAddIngredient={addIngredientHandler} />}
+        />
+        <Route path="/burger-lover/Burgers" element={<Burgers />} />
+        <Route path="/burger-lover/AddBurger" element={<AddBurger />} />
+        <Route
+          path="*"
+          element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
+>>>>>>> 7bca16db112d641c78760bd675d8815f4cae7d57
   );
 }
 
