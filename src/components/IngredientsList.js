@@ -9,12 +9,11 @@ import Checkbox from '@mui/material/Checkbox';
 // import CommentIcon from '@mui/icons-material/Comment';
 import useIngrediantsFetch from '../services/useIngrediantsFetch';
 
-export default function CheckboxList() {
+export default function CheckboxList({checked, setChecked}) {
 
     const ingredients = useIngrediantsFetch();
     const ingredientsData = ingredients.data;
 
-  const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
     const currentIndex = checked.indexOf(value);

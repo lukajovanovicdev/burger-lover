@@ -5,3 +5,8 @@
   background-color: red;
   z-index: 999;
 }
+
+.burgerpic {
+  width: 100px;
+  height: auto
+}

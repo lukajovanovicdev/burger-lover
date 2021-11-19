@@ -1584,7 +1584,14 @@
     "prop-types" "^15.7.2"
     "react-is" "^17.0.2"
 
-"@mui/material@^5.1.1":
+"@mui/icons-material@^5.1.1":
+  "integrity" "sha1-8/RCdYVekkzfXjedqHKZ1jOFS1M="
+  "resolved" "http://fe-artifactoryha.de.bosch.com:80/artifactory/api/npm/npm-repo/@mui/icons-material/-/icons-material-5.1.1.tgz"
+  "version" "5.1.1"
+  dependencies:
+    "@babel/runtime" "^7.16.3"
+
+"@mui/material@^5.0.0", "@mui/material@^5.1.1":
   "integrity" "sha1-croc6MJTaX35biTNH1VdXCVpN20="
   "resolved" "http://fe-artifactoryha.de.bosch.com:80/artifactory/api/npm/npm-repo/@mui/material/-/material-5.1.1.tgz"
   "version" "5.1.1"
@@ -5340,6 +5347,11 @@
   dependencies:
     "loader-utils" "^2.0.0"
     "schema-utils" "^3.0.0"
+
+"file-uri-to-path@1.0.0":
+  "integrity" "sha1-VTp7hEb/b2hDWcRF8eN6BdrMM90="
+  "resolved" "http://fe-artifactoryha.de.bosch.com:80/artifactory/api/npm/npm-repo/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz"
+  "version" "1.0.0"
 
 "filename-reserved-regex@^2.0.0":
   "integrity" "sha1-q/c9+rc10EVECr/qLZHzieu/oik="
