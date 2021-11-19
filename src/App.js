@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import './App.css';
-import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
-import Ingredients from './components/Ingredients';
-import AddIngredients from './components/AddIngredients';
-import Burgers from './components/Burgers';
-import AddBurger from './components/AddBurger';
-import MakeCustomBurger from './components/MakeCustomBurger';
-import ButtonBases from './components/buttons/ButtonsBase';
-import useIngrediantsFetch from './services/useIngrediantsFetch';
+import React, { useState, useEffect, useCallback } from "react";
+import "./App.css";
+import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import Ingredients from "./components/Ingredients";
+import AddIngredients from "./components/AddIngredients";
+import Burgers from "./components/Burgers";
+import AddBurger from "./components/AddBurger";
+import MakeCustomBurger from "./components/MakeCustomBurger";
+import ButtonBases from "./components/buttons/ButtonsBase";
+import useIngrediantsFetch from "./services/useIngrediantsFetch";
 
 function App() {
   const [ingredient, setIngredients] = useState([]);
@@ -17,13 +17,16 @@ function App() {
   const ingData = useIngrediantsFetch();
 
   async function addIngredientHandler(ingredient) {
-    const response = await fetch('https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients', {
-      method: 'POST',
-      body: JSON.stringify(ingredient),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const response = await fetch(
+      "https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients",
+      {
+        method: "POST",
+        body: JSON.stringify(ingredient),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await response.json();
     console.log(data);
   }
@@ -40,7 +43,6 @@ function App() {
   }
   return (
     <div>
-
       <BrowserRouter>
         <ButtonBases></ButtonBases>
         <Routes>
@@ -51,8 +53,14 @@ function App() {
           />
           <Route path="/burger-lover/Burgers" element={<Burgers />} />
           <Route path="/burger-lover/AddBurger" element={<AddBurger />} />
-          <Route path="/burger-lover/MakeCustomBurger" element={<MakeCustomBurger />} />
-          <Route path="*" element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}></Route>
+          <Route
+            path="/burger-lover/MakeCustomBurger"
+            element={<MakeCustomBurger />}
+          />
+          <Route
+            path="*"
+            element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </div>

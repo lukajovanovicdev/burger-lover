@@ -50,7 +50,7 @@ const Image = styled("span")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: colors.black,
+  color: colors.white,
 }));
 
 const ImageBackdrop = styled("span")(({ theme }) => ({
