@@ -1,3 +1,7 @@
 .css-97e7ai-MuiTypography-root {
   background-color: #8c6c4575;
 }
+
+.MuiTypography-root {
+  font-family: "Montserrat", sans-serif;
+}

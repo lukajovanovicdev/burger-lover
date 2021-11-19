@@ -8,6 +8,7 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import CommentModal from "./CommentModal";
+import ".././colors";
 
 export default function CheckboxList() {
   const [openComment, setOpenComment] = React.useState(false);
@@ -66,7 +67,7 @@ export default function CheckboxList() {
   return (
     <React.Fragment>
       {openComment && <CommentModal openComment={openComment} />}
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+      <List sx={{ width: "100%", maxWidth: 360, backgroundColor: " #bf9341" }}>
         {burgers.map((value) => {
           const labelId = `checkbox-list-label-${value.id}`;
 
