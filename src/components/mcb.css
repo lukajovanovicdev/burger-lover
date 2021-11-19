@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap");
-
-.css-1mcnwpj-MuiList-root {
+.form {
   width: 30%;
   background-color: #bf9341;
   max-height: 100%;
   padding: 10px;
   position: relative;
-  left: 35%;
+  left: 65%;
   bottom: -35px;
   border-radius: 10px;
   font-family: "Montserrat", sans-serif;

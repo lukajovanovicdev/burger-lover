@@ -142,6 +142,21 @@ export default function CheckboxList() {
   const openBurgerIngredientList = (burgerId) => {
     console.log("burgerId = ", burgerId);
   };
+  const style = {
+    width: "30%",
+    backgroundColor: "#bf9341",
+    maxHeight: "100%",
+    padding: "10px",
+    position: "relative",
+    left: "35%",
+    bottom: "-35px",
+    borderRadius: "10px",
+    fontSize: "25px",
+    fontWeight: "bold",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  };
 
   return (
     <React.Fragment>
@@ -152,7 +167,7 @@ export default function CheckboxList() {
           setOpenComment={setOpenComment}
         />
       )}
-      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+      <List style={style}>
         {burgerDataFetched.data &&
           burgers.map((value) => {
             const labelId = `checkbox-list-label-${value.id}`;
