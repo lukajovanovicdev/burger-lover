@@ -8,12 +8,9 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import CommentModal from "./CommentModal";
-<<<<<<< HEAD
 import ".././colors";
 import "./BurgerLIst.css";
-=======
-import useBurgersFetch from '../services/useBurgersFetch';
->>>>>>> 5d1ed2abd48efef97286a3897aa841846f34fd19
+import useBurgersFetch from "../services/useBurgersFetch";
 
 export default function CheckboxList() {
   const [openComment, setOpenComment] = React.useState(false);
@@ -24,9 +21,9 @@ export default function CheckboxList() {
     setOpenComment(true);
     setBurgerData(burgerData);
   };
-const burgerDataFetched = useBurgersFetch();
+  const burgerDataFetched = useBurgersFetch();
 
-const burgers = burgerDataFetched.data
+  const burgers = burgerDataFetched.data;
   // const burgers = [
   //   {
   //     id: 1,
@@ -148,41 +145,48 @@ const burgers = burgerDataFetched.data
 
   return (
     <React.Fragment>
-      {openComment && <CommentModal openComment={openComment} burgerData={burgerData} setOpenComment={setOpenComment} />}
+      {openComment && (
+        <CommentModal
+          openComment={openComment}
+          burgerData={burgerData}
+          setOpenComment={setOpenComment}
+        />
+      )}
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        {burgerDataFetched.data && burgers.map((value) => {
-          const labelId = `checkbox-list-label-${value.id}`;
+        {burgerDataFetched.data &&
+          burgers.map((value) => {
+            const labelId = `checkbox-list-label-${value.id}`;
 
-          return (
-            <ListItem
-              key={value.id}
-              secondaryAction={
-                <IconButton edge="end" aria-label="comments">
-                  <CommentIcon onClick={() => showComment(value)} />
-                </IconButton>
-              }
-              disablePadding
-              // onClick={openBurgerIngredientList(value.id)}
-            >
-              <ListItemButton
-                role={undefined}
-                onClick={handleToggle(value.id)}
-                dense
+            return (
+              <ListItem
+                key={value.id}
+                secondaryAction={
+                  <IconButton edge="end" aria-label="comments">
+                    <CommentIcon onClick={() => showComment(value)} />
+                  </IconButton>
+                }
+                disablePadding
+                // onClick={openBurgerIngredientList(value.id)}
               >
-                <ListItemIcon>
-                  <Checkbox
-                    edge="start"
-                    checked={checked.indexOf(value.id) !== -1}
-                    tabIndex={-1}
-                    disableRipple
-                    inputProps={{ "aria-labelledby": labelId }}
-                  />
-                </ListItemIcon>
-                <ListItemText id={labelId} primary={`${value.name}`} />
-              </ListItemButton>
-            </ListItem>
-          );
-        })}
+                <ListItemButton
+                  role={undefined}
+                  onClick={handleToggle(value.id)}
+                  dense
+                >
+                  <ListItemIcon>
+                    <Checkbox
+                      edge="start"
+                      checked={checked.indexOf(value.id) !== -1}
+                      tabIndex={-1}
+                      disableRipple
+                      inputProps={{ "aria-labelledby": labelId }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText id={labelId} primary={`${value.name}`} />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
       </List>
     </React.Fragment>
   );
