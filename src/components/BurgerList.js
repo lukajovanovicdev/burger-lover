@@ -8,8 +8,12 @@ import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import CommentIcon from "@mui/icons-material/Comment";
 import CommentModal from "./CommentModal";
+<<<<<<< HEAD
 import ".././colors";
 import "./BurgerLIst.css";
+=======
+import useBurgersFetch from '../services/useBurgersFetch';
+>>>>>>> 5d1ed2abd48efef97286a3897aa841846f34fd19
 
 export default function CheckboxList() {
   const [openComment, setOpenComment] = React.useState(false);
@@ -20,9 +24,9 @@ export default function CheckboxList() {
     setOpenComment(true);
     setBurgerData(burgerData);
   };
-  const burgerDataFetched = useBurgersFetch();
+const burgerDataFetched = useBurgersFetch();
 
-  const burgers = burgerDataFetched.data;
+const burgers = burgerDataFetched.data
   // const burgers = [
   //   {
   //     id: 1,
@@ -144,12 +148,9 @@ export default function CheckboxList() {
 
   return (
     <React.Fragment>
-      {openComment && <CommentModal openComment={openComment} />}
-      <List
-        sx={{ width: "100%", maxWidth: 360, backgroundColor: " #bf9341" }}
-        className="burger"
-      >
-        {burgers.map((value) => {
+      {openComment && <CommentModal openComment={openComment} burgerData={burgerData} setOpenComment={setOpenComment} />}
+      <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        {burgerDataFetched.data && burgers.map((value) => {
           const labelId = `checkbox-list-label-${value.id}`;
 
           return (
