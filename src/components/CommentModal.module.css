@@ -1,0 +1,7 @@
+.commentbox {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: red;
+  z-index: 999;
+}
