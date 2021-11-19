@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useCallback } from "react";
-import "./App.css";
-import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
-import Ingredients from "./components/Ingredients";
-import AddIngredients from "./components/AddIngredients";
-import Burgers from "./components/Burgers";
-import AddBurger from "./components/AddBurger";
+import React, { useState, useEffect, useCallback } from 'react';
+import './App.css';
+import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
+import Ingredients from './components/Ingredients';
+import AddIngredients from './components/AddIngredients';
+import Burgers from './components/Burgers';
+import AddBurger from './components/AddBurger';
+import MakeCustomBurger from './components/MakeCustomBurger';
+import ButtonBases from './components/buttons/ButtonsBase';
 
 function App() {
   const [ingredient, setIngredients] = useState([]);
@@ -15,11 +17,9 @@ function App() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(
-        "https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients"
-      );
+      const response = await fetch('https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients');
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        throw new Error('Something went wrong!');
       }
       const data = await response.json();
 
@@ -44,16 +44,13 @@ function App() {
   }, [fetchIngredientHandler]);
 
   async function addIngredientHandler(ingredient) {
-    const response = await fetch(
-      "https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients",
-      {
-        method: "POST",
-        body: JSON.stringify(ingredient),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch('https://6195607a74c1bd00176c6d1f.mockapi.io/ingredients', {
+      method: 'POST',
+      body: JSON.stringify(ingredient),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     const data = await response.json();
     console.log(data);
   }
@@ -69,21 +66,23 @@ function App() {
     content = <p>Loading...</p>;
   }
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/burger-lover/Ingredients" element={<Ingredients />} />
-        <Route
-          path="/burger-lover/AddIngredients"
-          element={<AddIngredients onAddIngredient={addIngredientHandler} />}
-        />
-        <Route path="/burger-lover/Burgers" element={<Burgers />} />
-        <Route path="/burger-lover/AddBurger" element={<AddBurger />} />
-        <Route
-          path="*"
-          element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}
-        ></Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      
+      <BrowserRouter>
+      <ButtonBases></ButtonBases>
+        <Routes>
+          <Route path="/burger-lover/Ingredients" element={<Ingredients />} />
+          <Route
+            path="/burger-lover/AddIngredients"
+            element={<AddIngredients onAddIngredient={addIngredientHandler} />}
+          />
+          <Route path="/burger-lover/Burgers" element={<Burgers />} />
+          <Route path="/burger-lover/AddBurger" element={<AddBurger />} />
+          <Route path="/burger-lover/MakeCustomBurger" element={<MakeCustomBurger />} />
+          <Route path="*" element={<Navigate to="/burger-lover/AddIngredients"></Navigate>}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
