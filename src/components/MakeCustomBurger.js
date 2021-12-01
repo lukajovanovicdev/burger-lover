@@ -33,6 +33,9 @@ const MakeCustomBurger = () => {
 
   const customBurgerNameIsValid = customBurgerName.trim() !== "";
 
+/* TODO Ovde treba koristiti state i update-ovati ga u customBurgerNameHandler,
+  a i customBurgerNameIsValid vec vraca boolean koji moze da se iskoristi za validaciju, ako je to jedina provera,
+  nema potrebe dupli posao da se radi */
   let formIsValid = false;
 
   const renderListOfIngreedients = () => {
@@ -66,6 +69,7 @@ const MakeCustomBurger = () => {
 
     return ingredients;
   };
+  // TODO takodje exportovati u poseban fajl
   const ingredientsMockUp = [
     {
       name: "Bacon",

@@ -1,14 +1,15 @@
-import * as React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
+import * as React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Checkbox from '@mui/material/Checkbox';
 // import IconButton from '@mui/material/IconButton';
 // import CommentIcon from '@mui/icons-material/Comment';
-import useIngrediantsFetch from "../services/useIngrediantsFetch";
+import useIngrediantsFetch from '../services/useIngrediantsFetch';
 
+// TODO Ime komponente i naziv fajla treba da se podudaraju
 export default function CheckboxList({ checked, setChecked }) {
   const ingredients = useIngrediantsFetch();
   const ingredientsData = ingredients.data;
@@ -26,23 +27,24 @@ export default function CheckboxList({ checked, setChecked }) {
     setChecked(newChecked);
   };
 
+  // TODO ne koristi se, izbaciti
   const openBurgerIngredientList = (burgerId) => {
-    console.log("burgerId = ", burgerId);
+    console.log('burgerId = ', burgerId);
   };
   const style = {
-    width: "30%",
-    backgroundColor: "#bf9341",
-    maxHeight: "100%",
-    padding: "10px",
-    position: "relative",
-    left: "65%",
-    bottom: "-35px",
-    borderRadius: "10px",
-    fontSize: "25px",
-    fontWeight: "bold",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    width: '30%',
+    backgroundColor: '#bf9341',
+    maxHeight: '100%',
+    padding: '10px',
+    position: 'relative',
+    left: '65%',
+    bottom: '-35px',
+    borderRadius: '10px',
+    fontSize: '25px',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   };
 
   return (
@@ -62,18 +64,14 @@ export default function CheckboxList({ checked, setChecked }) {
               disablePadding
               // onClick={openBurgerIngredientList(value.id)}
             >
-              <ListItemButton
-                role={undefined}
-                onClick={handleToggle(value.id)}
-                dense
-              >
+              <ListItemButton role={undefined} onClick={handleToggle(value.id)} dense>
                 <ListItemIcon>
                   <Checkbox
                     edge="start"
                     checked={checked.indexOf(value.id) !== -1}
                     tabIndex={-1}
                     disableRipple
-                    inputProps={{ "aria-labelledby": labelId }}
+                    inputProps={{ 'aria-labelledby': labelId }}
                   />
                 </ListItemIcon>
                 <ListItemText id={labelId} primary={`${value.name}`} />

@@ -1,16 +1,16 @@
-import * as React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import CommentIcon from "@mui/icons-material/Comment";
-import CommentModal from "./CommentModal";
-import ".././colors";
-import "./BurgerLIst.css";
-import useBurgersFetch from "../services/useBurgersFetch";
+import * as React from 'react';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Checkbox from '@mui/material/Checkbox';
+import IconButton from '@mui/material/IconButton';
+import CommentIcon from '@mui/icons-material/Comment';
+import CommentModal from './CommentModal';
+import '.././colors';
+import './BurgerLIst.css';
+import useBurgersFetch from '../services/useBurgersFetch';
 
 export default function CheckboxList() {
   const [openComment, setOpenComment] = React.useState(false);
@@ -24,6 +24,8 @@ export default function CheckboxList() {
   const burgerDataFetched = useBurgersFetch();
 
   const burgers = burgerDataFetched.data;
+
+  // TODO exportovati u poseban fajl, moze da ostane tamo kao mock-data ako negde zatreba, a ne stoji ovde zakomentarisano
   // const burgers = [
   //   {
   //     id: 1,
@@ -138,34 +140,31 @@ export default function CheckboxList() {
 
     setChecked(newChecked);
   };
-
+  // TODO ne koristi se, izbaciti
   const openBurgerIngredientList = (burgerId) => {
-    console.log("burgerId = ", burgerId);
+    console.log('burgerId = ', burgerId);
   };
   const style = {
-    width: "30%",
-    backgroundColor: "#bf9341",
-    maxHeight: "100%",
-    padding: "10px",
-    position: "relative",
-    left: "35%",
-    bottom: "-35px",
-    borderRadius: "10px",
-    fontSize: "25px",
-    fontWeight: "bold",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    width: '30%',
+    backgroundColor: '#bf9341',
+    maxHeight: '100%',
+    padding: '10px',
+    position: 'relative',
+    left: '35%',
+    bottom: '-35px',
+    borderRadius: '10px',
+    fontSize: '25px',
+    fontWeight: 'bold',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   };
 
   return (
+    // TODO pohvala za koriscenje Fragmenta, moze i skraceno <></>
     <React.Fragment>
       {openComment && (
-        <CommentModal
-          openComment={openComment}
-          burgerData={burgerData}
-          setOpenComment={setOpenComment}
-        />
+        <CommentModal openComment={openComment} burgerData={burgerData} setOpenComment={setOpenComment} />
       )}
       <List style={style}>
         {burgerDataFetched.data &&
@@ -183,18 +182,14 @@ export default function CheckboxList() {
                 disablePadding
                 // onClick={openBurgerIngredientList(value.id)}
               >
-                <ListItemButton
-                  role={undefined}
-                  onClick={handleToggle(value.id)}
-                  dense
-                >
+                <ListItemButton role={undefined} onClick={handleToggle(value.id)} dense>
                   <ListItemIcon>
                     <Checkbox
                       edge="start"
                       checked={checked.indexOf(value.id) !== -1}
                       tabIndex={-1}
                       disableRipple
-                      inputProps={{ "aria-labelledby": labelId }}
+                      inputProps={{ 'aria-labelledby': labelId }}
                     />
                   </ListItemIcon>
                   <ListItemText id={labelId} primary={`${value.name}`} />

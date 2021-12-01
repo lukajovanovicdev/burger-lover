@@ -24,6 +24,7 @@ const CommentModal = ({ openComment, burgerData, setOpenComment }) => {
         
         <img className={classes.burgerpic}  src='static/images/ingredients.jpg' /> 
         {burgerData.ingredients.map((ingredient) => {
+          // TODO Ovaj return moze da se kompresuje u 1 liniju
             return (
                 <div>{ingredient.name}</div>
             )
